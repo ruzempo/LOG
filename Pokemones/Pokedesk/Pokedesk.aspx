@@ -8,11 +8,34 @@
     <title>Pokedesk</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
+    <!-- BD Historico -->
+    <script type="text/javascript">
+        var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
+        function startDB() {
+            dataBase = indexedDB.open("object", 1);
+            dataBase.onupgradeneeded = function (e) {
+                active = dataBase.result;
+                object = active.createObjectStore("historico", { keyPath: 'id', autoIncrement: true });
+                object.createIndex('by_name', 'nombre', { unique: false });
+                object.createIndex('by_dni', 'imagen', { unique: true });
+            };
+
+            dataBase.onsuccess = function (e) {
+                alert('Base de datos cargada correctamente');
+
+            };
+
+            dataBase.onerror = function (e) {
+                alert('Error cargando la base de datos');
+            };
+
+        }
+    </script>
 
 </head>
 
-<body>
+<body onload="startDB()";>
 <header>
 <div id="divBucar">
 <div id="menu1" >
@@ -20,13 +43,16 @@
     
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" onclick="extraeportipo(10)" href="#">Fuego</a>
+            <a class="nav-link active" onclick="extraeportipo(10,1)" href="#">Fuego</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="extraeportipo(11)" href="#">Agua</a>
+            <a class="nav-link" onclick="extraeportipo(11,1)" href="#">Agua</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="extraeportipo(12)" href="#">Hierba</a>
+            <a class="nav-link" onclick="extraeportipo(12,1)" href="#">Hierba</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="loadAll()" href="#">Hstorico</a>
           </li>
         </ul>
         <div id="divBucar1">
@@ -46,10 +72,10 @@
                       Tipo pokemon
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" onclick="extraeportipo(10)" href="#">Fuego</a>
-                      <a class="dropdown-item" onclick="extraeportipo(11)" href="#">Agua</a>
-                      <a class="dropdown-item" onclick="extraeportipo(12)" href="#">Hierba</a>
-                      <a class="dropdown-item" onclick="CreaTabla()" href="#">crea tabla</a>
+                      <a class="dropdown-item" onclick="extraeportipo(10,2)" href="#">Fuego</a>
+                      <a class="dropdown-item" onclick="extraeportipo(11,2)" href="#">Agua</a>
+                      <a class="dropdown-item" onclick="extraeportipo(12,2)" href="#">Hierba</a>
+                      <a class="dropdown-item" onclick="loadAll()" href="#">Hstorico</a>
                     </div>
                   </li>
                 </ul>
@@ -79,20 +105,9 @@
             </table>  
          </div>  
 
-
-
-
     </asp:Panel>
 
-    <!-- Panel para pantalla mediana -->
-    <asp:Panel runat="server" ID="pnlmediana" Visible="false">
-
-    </asp:Panel>
-
-     <!-- Panel para pantalla grande -->
-    <asp:Panel runat="server" ID="pnlgrande" Visible="false">
-
-    </asp:Panel>
+<div id="divTablaPokemones"></div>
 
         <!-- Pantalla modal para detalle de pokemon seleccionado -->
         <div class="modal fade" id="mdlDetallePokemon" role="dialog">
@@ -148,11 +163,6 @@
                             </div>
                           </div>
                         </div>
-
-
-
-
-
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div>
@@ -160,6 +170,31 @@
             </div>
         </div>
       </div>
+
+
+<!-- Pantalla modal para mostrar historico -->
+<div class="modal fade" id="mdlHistoricoPokemon" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Historico Pokemon</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

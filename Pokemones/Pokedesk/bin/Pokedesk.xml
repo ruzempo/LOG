@@ -55,23 +55,5 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:Pokedesk.Pokedesk._pnlmediana">
-<summary>
-pnlmediana control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:Pokedesk.Pokedesk._pnlgrande">
-<summary>
-pnlgrande control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 </members>
 </doc>

@@ -21,22 +21,4 @@ Partial Public Class Pokedesk
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlchica As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''pnlmediana control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlmediana As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''pnlgrande control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlgrande As Global.System.Web.UI.WebControls.Panel
 End Class
