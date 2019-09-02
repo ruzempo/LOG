@@ -17,7 +17,7 @@
         <div id="menuInicial" class="menu-vertical">
           <a href="#" class="activo">Proyecto</a>
           <a href="Pokedesk.aspx">Pokedex</a>
-          <a href="#">Krypto</a>
+          <a href="CryptoFolio.aspx">Crypto Folio</a>
 
         </div>
 

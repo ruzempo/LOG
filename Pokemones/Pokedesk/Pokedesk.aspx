@@ -6,7 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Pokedesk</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <!-- BD Historico -->
     <script type="text/javascript">
@@ -18,7 +19,7 @@
                 active = dataBase.result;
                 object = active.createObjectStore("historico", { keyPath: 'id', autoIncrement: true });
                 object.createIndex('by_name', 'nombre', { unique: false });
-                object.createIndex('by_dni', 'imagen', { unique: true });
+                object.createIndex('by_imagen', 'imagen', { unique: false });
             };
 
             dataBase.onsuccess = function (e) {

@@ -6,6 +6,42 @@ Pokedesk
 </name>
 </assembly>
 <members>
+<member name="F:Pokedesk.CryptoFolio._formulario">
+<summary>
+formulario control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Pokedesk.CryptoFolio._cmbMoneda1">
+<summary>
+cmbMoneda1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Pokedesk.CryptoFolio._cmbMoneda2">
+<summary>
+cmbMoneda2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Pokedesk.CryptoFolio._cmbMoneda3">
+<summary>
+cmbMoneda3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:Pokedesk.Inicio._form1">
 <summary>
 form1 control.

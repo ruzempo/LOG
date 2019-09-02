@@ -398,6 +398,28 @@ function loadAll() {
         elements = [];
         alert(historia);
     }
+}
+
+/*
+************ Crypto Folio ************
+*/
 
 
+
+function urlCrypto(simbolo) {
+    const llave = "435ccc6881f962faa3bd5261e69791a79faed3f49681494574706cb8d26e3508";
+    url = "https://min-api.cryptocompare.com/data/price?fsym=" + simbolo + "&tsyms=USD&api_key=" + llave;
+    fetch(url)
+    .then(function (response) {
+        response.json()
+        .then(function (tsyms) {
+            var valor = tsyms.USD;
+            return valor;
+        })
+    })
+
+
+
+
+    
 }
